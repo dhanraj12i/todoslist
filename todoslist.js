@@ -1,7 +1,7 @@
 
 add = document.getElementById("add");
 add.addEventListener("click", getAndUpdate);
-
+let resetform  = document.getElementById("form-text").reset();
 function getAndUpdate() {
     console.log("updating list ..");
 
@@ -20,18 +20,25 @@ function getAndUpdate() {
         localStorage.setItem('itemsJSON', JSON.stringify(itemsJSONArr))
 
     }
+
     update();
+    // reset();
+    
 }
+
+// function reset(){
+
+//     document.getElementById("form-text").reset();
+// }
 // populate the table
 function update() {
 
     if (localStorage.getItem('itemsJSON') == null) {
-
         itemsJSONArr = [];
         localStorage.setItem('itemsJSON', JSON.stringify(itemsJSONArr))
-    } 
+    }
     tablebody = document.getElementById("tablebody")
-  
+
     let str = "";
 
     itemsJSONArr.forEach((element, index) => {
@@ -40,10 +47,11 @@ function update() {
         <th scope="row">${index + 1}</th>
         <td>${element[0]}</td>
         <td>${element[1]}</td>
-        <td><button class="btn btn-sm btn-primary" onclick = "deleted(${index})">Delete</button></td>
+        
         </tr>
         `
     });
+    // <td><button class="btn btn-sm btn-primary" onclick = "deleted(${index})">Delete</button></td> 43 Line
 
     tablebody.innerHTML = str;
 }
@@ -54,7 +62,7 @@ function deleted(itemIndex) {
     console.log("Delete", itemIndex + 1);
     itemsJSONArrStr = localStorage.getItem('itemsJSON')
     itemsJSONArr = JSON.parse(itemsJSONArrStr);
-   
+
     // delete
     itemsJSONArr.splice(itemIndex, 1);
     localStorage.setItem('itemsJSON', JSON.stringify(itemsJSONArr));
@@ -62,8 +70,18 @@ function deleted(itemIndex) {
 }
 
 
-function clearList(){
-console.log("clearing the storage");
-localStorage.clear();
-update();
+function clearList() {
+
+    console.log("clearing the storage");
+    localStorage.clear();
+    update();
+}
+
+function confirmclearList() {
+
+    let clearLisst = confirm('please, confirm for clearing content of list!! ');
+    if (clearLisst) {
+        clearList();
+   
+    }
 }
