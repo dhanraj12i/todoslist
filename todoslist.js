@@ -1,7 +1,7 @@
 
 add = document.getElementById("add");
 add.addEventListener("click", getAndUpdate);
-let resetform  = document.getElementById("form-text").reset();
+// let resetform  = document.getElementById("form-text").reset();
 function getAndUpdate() {
     console.log("updating list ..");
 
@@ -20,16 +20,14 @@ function getAndUpdate() {
         localStorage.setItem('itemsJSON', JSON.stringify(itemsJSONArr))
 
     }
-
-    update();
-    // reset();
     
+    document.getElementById('title').value = ""; 
+    document.getElementById('description').value = ""; 
+
+    update();        
 }
 
-// function reset(){
 
-//     document.getElementById("form-text").reset();
-// }
 // populate the table
 function update() {
 

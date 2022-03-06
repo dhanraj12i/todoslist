@@ -17,46 +17,47 @@
     <div class="nav">
         <p id="headline">To-Dos-List</p>
     </div>
-    <div class="container">
-        <div class="form-text" id="f1">
-            <p></p>
-            <label for="Title">Title</label>
-            <input type="text" class="form-control" id="title" aria-describedby="emailHelp" placeholder="">
-            <!-- <small id="emailHelp" class="form-text text-muted">Add an item to the list.</small> -->
+    <div class="img">
+        <div class="container">
+            <div class="form-text" id="f1">
+                <p></p>
+                <label for="Title">Title</label>
+                <input type="text" class="form-control" id="title" aria-describedby="emailHelp" placeholder="">
+                <!-- <small id="emailHelp" class="form-text text-muted">Add an item to the list.</small> -->
+            </div>
+
+            <div class="form-text" id="f2">
+                <label for="Description">Description</label>
+                <textarea class="form-control" id="description" rows="3"></textarea>
+                <!-- <input type="text" class="form-control" id="description" aria-describedby="emailHelp" placeholder=":-)"> -->
+                <p></p>
+                <button type="submit" id="add" class="btn btn-1" value="reset">Add To List</button>
+                <button type="submit" id="clear" class="btn btn-2" onclick="confirmclearList()"> Clear List</button>
+            </div>
         </div>
 
-        <div class="form-text" id="f2">
-            <label for="Description">Description</label>
-            <textarea class="form-control" id="description" rows="3"></textarea>
-            <!-- <input type="text" class="form-control" id="description" aria-describedby="emailHelp" placeholder=":-)"> -->
+
+
+
+        <div id="items">
             <p></p>
-            <button type="submit" id="add" class="btn btn-primary" value="reset">Add To List</button>
-            <button type="submit" id="clear" class="btn btn-primary" onclick="confirmclearList()"> Clear List</button>
+            <h4 id="heading">Your List ✍️</h4>
+            <table id="table" class="class-table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Sr.No</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <!-- <th></th> -->
+                    </tr>
+                </thead>
+                <tbody id="tablebody">
+
+                </tbody>
+            </table>
+
         </div>
     </div>
-
-
-
-
-    <div id="items">
-        <p></p>
-        <h4 id="heading">Your List ✍️</h4>
-        <table id="table" class="class-table">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">Sr.No</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Description</th>
-                    <!-- <th></th> -->
-                </tr>
-            </thead>
-            <tbody id="tablebody">
-
-            </tbody>
-        </table>
-
-    </div>
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
