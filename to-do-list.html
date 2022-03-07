@@ -13,35 +13,40 @@
     <title>To-Do-List</title>
 </head>
 
-<body>
+<body >
+    
     <div class="nav">
-        <p id="headline">To-Dos-List</p>
+        <h2 id="headline" class="headlineMain ">
+            <span class="main word1">To-</span> 
+            <span class="main word2">Dos</span>
+            <span class="main word3">-List</span>
+        </h2>
     </div>
     <div class="img">
         <div class="container">
-            <div class="form-text" id="f1">
+            <div class="form-text f1" id="f1">
                 <p></p>
-                <label for="Title">Title</label>
-                <input type="text" class="form-control" id="title" aria-describedby="emailHelp" placeholder="">
+                <label for="Title" class="ltitle">TITLE</label>
+                <input type="text" class="form-control textbox1" id="title" autocomplete="off" placeholder="">
                 <!-- <small id="emailHelp" class="form-text text-muted">Add an item to the list.</small> -->
+                <!-- <span>Title</span> -->
             </div>
 
-            <div class="form-text" id="f2">
+            <div class="form-text f2" id="f2">
                 <label for="Description">Description</label>
-                <textarea class="form-control" id="description" rows="3"></textarea>
+                <textarea class="form-control textbox2" id="description" rows="3" required="required"></textarea>
                 <!-- <input type="text" class="form-control" id="description" aria-describedby="emailHelp" placeholder=":-)"> -->
+                <!-- <span>Description</span> -->
                 <p></p>
-                <button type="submit" id="add" class="btn btn-1" value="reset">Add To List</button>
-                <button type="submit" id="clear" class="btn btn-2" onclick="confirmclearList()"> Clear List</button>
+                <button type="submit" id="add" class="btn btn-1" value="reset">Add </button>
+                <button type="submit" id="clear" class="btn btn-2" onclick="confirmclearList()"> Clear</button>
             </div>
         </div>
 
-
-
-
         <div id="items">
             <p></p>
-            <h4 id="heading">Your List ✍️</h4>
+            <!-- <h4 id="heading">Your List ✍️</h4> -->
+            
             <table id="table" class="class-table">
                 <thead class="thead-dark">
                     <tr>
